@@ -18,7 +18,8 @@ import statsmodels.formula.api as smf
 import scipy.stats as stats
 import pickle
 import warnings
-import functions
+from functions import checkresiduals
+from functions import CorrMtx
 warnings.filterwarnings("ignore")
 pd.set_option('display.max_columns', 300)
 sns.set(style='whitegrid',palette='bright', context='talk', color_codes=True)

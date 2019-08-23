@@ -17,7 +17,8 @@ import numpy as np
 import seaborn as sns
 import pickle
 import warnings
-import functions
+from functions import checkresiduals
+from functions import CorrMtx
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import MinMaxScaler

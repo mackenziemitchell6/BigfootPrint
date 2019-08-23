@@ -16,7 +16,7 @@ import scipy.stats as sci
 import numpy as np
 import seaborn as sns
 import pickle
-import functions
+from functions import CorrMtx
 #Setting styles for graphs
 sns.set(style='whitegrid',palette='bright', color_codes=True)
 sns.set_context('talk')
