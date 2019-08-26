@@ -3,6 +3,7 @@
 By Mackenzie Mitchell and Jon Bebi
 
 **Overview**</n>
+
 In this project, we analyze the different variables that affect a country's excess carbon emissions. Using data obtained from the National Footprint Accounts, we attempted to create a multiple linear regression model using Python's statsmodels OLS feature that could predict a country's excess carbon and help to determine the steps a given country could take in order to reduce their excess carbon emissions.
 
 ![TargetDistplots](https://github.com/mackenziemitchell6/BigfootPrint/blob/mack-wip/Visualizations/TargetDistplots.png)
@@ -13,16 +14,19 @@ Note that most of the variables used in this multiple linear regression are meas
 ![HectareVisualization](https://github.com/mackenziemitchell6/BigfootPrint/blob/mack-wip/Visualizations/hectare.png)
 
 **Exploratory Data Analysis EDA**
+
 We explored and cleaned the data set using pandas which contains over 15,000 data points per year for 196 countries over more than 50 years. Slicing the data to only contain the observations that were recorded in terms of Ecological Footprint (or EFConsPerCap,) and using the columns country, year, crop_land, grazing_land, forrest_land, fishing_ground, built_up_land, carbon, gdp, and population, we begun our analysis with almost 5500 observations.
 
 We chose specifically to look at Ecological Footprint of Consumption Per Capita because it encompasses the Ecological Footprint of Production as well as the difference between the Ecological Footprint of Imports and Exports. This way, we ensure that we are taking the country's full Ecological Footprint into account. 
 
 **Transformations and Feature Engineering**
+
 Our target variable was initally just carbon. However, upon exploring the data, it became clear that excess carbon was a more useful variable that would provide more valuable information.
     excess_carbon= carbon - forest_land
-Carbon is initally calculated as the global hectares of world-average forest required to sequester carbon emissions and forest_land is initally calculated as the global hectares of forest land avaiable for sequestration among other things. Thus, the engineered target variable, excess_carbon, represents the carbon that a country produces that is not sequestered by their forest land. 
+Carbon is initally calculated as the global hectares of world-average forest required to sequester carbon emissions and forest_land is initally calculated as the global hectares of forest land avaiable for sequestration among other things. Thus, the engineered target variable, excess_carbon, represents the carbon that a country produces that is not sequestered by their forest land. We decided to engineer a feature called per_cap_built which encapsulates the built_up_land on a per person level, as we thought that the built up land may increase as population increased.
 
-We decided to engineer a feature called per_cap_built which encapsulates the built_up_land on a per person level, as we thought that the built up land may increase as population increased.
+**Testing Models**
+
 Initally, our best fit model included the predictors crop_land + gdp + fishing_ground + per_cap_built. This model explained 67.9% of the variation in excess_carbon, however, the residual plots contained a strong correlation, with and upwards sloping residual plot. 
 
 This prompted our thoughts that perhaps all the land type variables experienced multicollinearity. If a country increases their built_up_land, maybe they took away from their forest or crop land in order to make room for the new built land. For the reason, we engineered yet another feature that modeled the interation between crop_land, built_up_land, fishing_ground, and grazing_land. Forrest_land could not be included has this is a part of the target variable. 
