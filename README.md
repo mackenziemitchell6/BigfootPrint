@@ -13,19 +13,19 @@ Note that most of the variables used in this multiple linear regression are meas
 
 ![HectareVisualization](https://github.com/mackenziemitchell6/BigfootPrint/blob/master/Visualizations/hectare.png)
 
-**Exploratory Data Analysis EDA**
+<h1>Exploratory Data Analysis EDA</h1>
 
 We explored and cleaned the data set using pandas which contains over 15,000 data points per year for 196 countries over more than 50 years. Slicing the data to only contain the observations that were recorded in terms of Ecological Footprint (or EFConsPerCap,) and using the columns country, year, crop_land, grazing_land, forrest_land, fishing_ground, built_up_land, carbon, gdp, and population, we begun our analysis with almost 5500 observations.
 
 We chose specifically to look at Ecological Footprint of Consumption Per Capita because it encompasses the Ecological Footprint of Production as well as the difference between the Ecological Footprint of Imports and Exports. This way, we ensure that we are taking the country's full Ecological Footprint into account. 
 
-**Transformations and Feature Engineering**
+<h1>Transformations and Feature Engineering</h1>
 
 Our target variable was initally just carbon. However, upon exploring the data, it became clear that excess carbon was a more useful variable that would provide more valuable information.
     excess_carbon= carbon - forest_land
 Carbon is initally calculated as the global hectares of world-average forest required to sequester carbon emissions and forest_land is initally calculated as the global hectares of forest land avaiable for sequestration among other things. Thus, the engineered target variable, excess_carbon, represents the carbon that a country produces that is not sequestered by their forest land. We decided to engineer a feature called per_cap_built which encapsulates the built_up_land on a per person level, as we thought that the built up land may increase as population increased.
 
-**Testing Models**
+<h1>Testing Models</h1>
 
 Initally, our best fit model included the predictors crop_land + gdp + fishing_ground + per_cap_built. This model explained 67.9% of the variation in excess_carbon, however, the residual plots contained a strong correlation, with and upwards sloping residual plot. 
 
@@ -44,7 +44,7 @@ In the future, we would like to try to fit this data to a time series or a ridge
 ![ScatterPlots1](https://github.com/mackenziemitchell6/BigfootPrint/blob/master/Visualizations/Scatterplots1.png)
 ![ScatterPlots2](https://github.com/mackenziemitchell6/BigfootPrint/blob/master/Visualizations/Scatterplots2.png)
 
-**Libraries Used:**
+<h2>Libraries Used:</h2>
 
 Pandas for dataframes
 Matplotlib and Seaborn for plotting graphs
