@@ -2,7 +2,7 @@
 
 By Mackenzie Mitchell and Jon Bebi
 
-**Overview**</n>
+<h1>Overview</h1>
 
 In this project, we analyze the different variables that affect a country's excess carbon emissions. Using data obtained from the National Footprint Accounts, we attempted to create a multiple linear regression model using Python's statsmodels OLS feature that could predict a country's excess carbon and help to determine the steps a given country could take in order to reduce their excess carbon emissions.
 
