@@ -6,12 +6,12 @@ By Mackenzie Mitchell and Jon Bebi
 
 In this project, we analyze the different variables that affect a country's excess carbon emissions. Using data obtained from the National Footprint Accounts, we attempted to create a multiple linear regression model using Python's statsmodels OLS feature that could predict a country's excess carbon and help to determine the steps a given country could take in order to reduce their excess carbon emissions.
 
-![TargetDistplots](https://github.com/mackenziemitchell6/BigfootPrint/blob/master/Visualizations/TargetDistplots.png "Target Distribution Plots")
+![TargetDistplots](https://github.com/mackenziemitchell6/BigfootPrint/blob/master/Visualizations/TargetDistplots.png "Target distribution plots")
 
 Please find the raw dataset here: https://www.kaggle.com/footprintnetwork/national-footprint-accounts-2018
 Note that most of the variables used in this multiple linear regression are measures in global hectares (gha). The observations are quantified depending on the number of global hectares of that landtype either required to support consumption/production or that are supported by the biological productivity. This unit is a unit of land normalized by biological productivity across landtype, country, and year. Using this unit of measurement, we are able to compare the usage of different regions, times, and land types on the same scale. 
 
-![HectareVisualization](https://github.com/mackenziemitchell6/BigfootPrint/blob/master/Visualizations/hectare.png "Hectare Visualization")
+![HectareVisualization](https://github.com/mackenziemitchell6/BigfootPrint/blob/master/Visualizations/hectare.png "Hectare comparison")
 
 ## Exploratory Data Analysis (EDA)
 
@@ -31,18 +31,18 @@ Initally, our best fit model included the predictors crop_land + gdp + fishing_g
 
 This prompted our thoughts that perhaps all the land type variables experienced multicollinearity. If a country increases their built_up_land, maybe they took away from their forest or crop land in order to make room for the new built land. For the reason, we engineered yet another feature that modeled the interation between crop_land, built_up_land, fishing_ground, and grazing_land. Forrest_land could not be included has this is a part of the target variable. 
 
-![CorrelationMatrix](https://github.com/mackenziemitchell6/BigfootPrint/blob/master/Visualizations/CorrelationMatrix.png "Correlation Matrix")
+![CorrelationMatrix](https://github.com/mackenziemitchell6/BigfootPrint/blob/master/Visualizations/CorrelationMatrix.png "Correlation matrix")
 
 After trying our model with the land type interaction variable (landtypeInter), we found that our best fit multivariate linear regression model for this data contained the predictor variables crop_land, gdp, fishing_ground, per_cap_built, and landtypeInter. This model explained 68.7% of the variation in excess carbon. 
 
 Unfortunately, however, the residuals still showed a strong relationship. While the variance of the residuals looked to be constant, the mean was not centered at zero. In order to attempt a log transformation, the target variable had to be scaled on a MinMaxScale due to the negative values. Using the log of the scaled excess carbon as the target variable produces an R-sqaured value of less than 10%. No matter the transformations nor the interaction variables attempted, we were unable to completely successfuly fit the data to a multiple linear regression.
 
 
-![ResidualPlots](https://github.com/mackenziemitchell6/BigfootPrint/blob/master/Visualizations/ResidualPlots(BestFit).png "Residual Plots")
+![ResidualPlots](https://github.com/mackenziemitchell6/BigfootPrint/blob/master/Visualizations/ResidualPlots(BestFit).png "Residual plots")
 
 In the future, we would like to try to fit this data to a time series or a ridge regression model. The scatter plots of some of the features displayed an L-shape. Upon research, it was revealed that an L-shaped scatter plot represents sudden changes in the relationship between two time series. Again, through research, it was also found that Ridge Regression can be helpful to model data that experience strong multicollinearity.
-![ScatterPlots1](https://github.com/mackenziemitchell6/BigfootPrint/blob/master/Visualizations/Scatterplots1.png "Scatter Plots 1")
-![ScatterPlots2](https://github.com/mackenziemitchell6/BigfootPrint/blob/master/Visualizations/Scatterplots2.png "Scatter Plots 2")
+![ScatterPlots1](https://github.com/mackenziemitchell6/BigfootPrint/blob/master/Visualizations/Scatterplots1.png "Scatter plots 1")
+![ScatterPlots2](https://github.com/mackenziemitchell6/BigfootPrint/blob/master/Visualizations/Scatterplots2.png "Scatter plots 2")
 
 ## Libraries Used:
 
