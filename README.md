@@ -41,4 +41,4 @@ Unfortunately, however, the residuals still showed a strong relationship. While 
 In the future, we would like to try to fit this data to a time series or a ridge regression model. The scatter plots of some of the features displayed an L-shape. Upon research, it was revealed that an L-shaped scatter plot represents sudden changes in the relationship between two time series (Steve Haroz, Robert Kosara, and Steven L. Franconeri). Again, through research, it was also found that Ridge Regression can be helpful to model data that experience strong multicollinearity (NCSS).
 ![ScatterPlots1](https://github.com/mackenziemitchell6/BigfootPrint/blob/mack-wip/Visualizations/Scatterplots1.png)
 ![ScatterPlots2](https://github.com/mackenziemitchell6/BigfootPrint/blob/mack-wip/Visualizations/Scatterplots2.png)
-![ScatterPlots3](https://github.com/mackenziemitchell6/BigfootPrint/blob/mack-wip/Visualizations/Scatterplots3.png)
+
