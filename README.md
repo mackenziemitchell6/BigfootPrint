@@ -2,7 +2,9 @@
 
 By Mackenzie Mitchell and Jon Bebi
 
-In this project, we will analyze the different variables that affect a country's excess carbon emissions. Using data obtained from the National Footprint Accounts, we attempted to create a multiple linear regression model using Python's statsmodels OLS feature that could predict a country's excess carbon and help to determine the steps a given country could take in order to reduce their excess carbon emissions.
+In this project, we analyze the different variables that affect a country's excess carbon emissions. Using data obtained from the National Footprint Accounts, we attempted to create a multiple linear regression model using Python's statsmodels OLS feature that could predict a country's excess carbon and help to determine the steps a given country could take in order to reduce their excess carbon emissions.
+
+![TargetDistplots](https://github.com/mackenziemitchell6/BigfootPrint/blob/mack-wip/Visualizations/TargetDistplots.png)
 
 Please find the raw dataset here: https://www.kaggle.com/footprintnetwork/national-footprint-accounts-2018
 Note that most of the variables used in this multiple linear regression are measures in global hectares. The observations are quantified depending on the number of global hectares of that landtype either required to support consumption/production or that are supported by the biological productivity. This unit is a unit of land normalized by biological productivity across landtype, country, and year. Using this unit of measurement, we are able to compare the usage of different regions, times, and land types on the same scale. 
