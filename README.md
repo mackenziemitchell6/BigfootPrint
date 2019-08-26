@@ -35,8 +35,6 @@ This prompted our thoughts that perhaps all the land type variables experienced 
 
 After trying our model with the land type interaction variable (landtypeInter), we found that our best fit multivariate linear regression model for this data contained the predictor variables crop_land, gdp, fishing_ground, per_cap_built, and landtypeInter. This model explained 68.7% of the variation in excess carbon. 
 
-![BestModelSummary](https://github.com/mackenziemitchell6/BigfootPrint/blob/mack-wip/Visualizations/ModelSummary(BestFit))
-
 Unfortunately, however, the residuals still showed a strong relationship. While the variance of the residuals looked to be constant, the mean was not centered at zero. In order to attempt a log transformation, the target variable had to be scaled on a MinMaxScale due to the negative values. Using the log of the scaled excess carbon as the target variable produces an R-sqaured value of less than 10%. No matter the transformations nor the interaction variables attempted, we were unable to completely successfuly fit the data to a multiple linear regression.
 
 
