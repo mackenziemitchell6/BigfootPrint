@@ -40,7 +40,16 @@ Unfortunately, however, the residuals still showed a strong relationship. While 
 
 ![ResidualPlots](https://github.com/mackenziemitchell6/BigfootPrint/blob/mack-wip/Visualizations/ResidualPlots(BestFit).png)
 
-In the future, we would like to try to fit this data to a time series or a ridge regression model. The scatter plots of some of the features displayed an L-shape. Upon research, it was revealed that an L-shaped scatter plot represents sudden changes in the relationship between two time series (Steve Haroz, Robert Kosara, and Steven L. Franconeri). Again, through research, it was also found that Ridge Regression can be helpful to model data that experience strong multicollinearity (NCSS).
+In the future, we would like to try to fit this data to a time series or a ridge regression model. The scatter plots of some of the features displayed an L-shape. Upon research, it was revealed that an L-shaped scatter plot represents sudden changes in the relationship between two time series. Again, through research, it was also found that Ridge Regression can be helpful to model data that experience strong multicollinearity.
 ![ScatterPlots1](https://github.com/mackenziemitchell6/BigfootPrint/blob/mack-wip/Visualizations/Scatterplots1.png)
 ![ScatterPlots2](https://github.com/mackenziemitchell6/BigfootPrint/blob/mack-wip/Visualizations/Scatterplots2.png)
 
+**Libraries Used:**
+
+Pandas for dataframes
+Matplotlib and Seaborn for plotting graphs
+Statsmodels for OLS formula and function
+scipy.stats for various statistical functions
+Pickle in order to save visualizations
+Numpy for some functions such as np.log()
+Sklearn.preprocessing to try some scalers (MinMax and Standard)
